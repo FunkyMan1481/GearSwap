@@ -1,2 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GearSwap - Location d'équipements sportifs</title>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <header>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/equipements">Équipements</a>
+            <a href="/reservations">Réservations</a>
+            <a href="/users/login">Se connecter</a>
+            <a href="/users/register">S'inscrire</a>
+        </nav>
+    </header>
+
+    <!-- Section de recherche -->
+    <section>
+        <h1>Location d'équipements sportifs</h1>
+        <form action="/equipements/search" method="GET">
+            <input type="text" name="query" placeholder="Rechercher un équipement">
+            <button type="submit">Rechercher</button>
+        </form>
+    </section>
+
+    <!-- Liste des équipements -->
+    <section>
+        <h2>Équipements disponibles</h2>
+        <!-- Remplacez ces éléments par une boucle dynamique dans votre serveur/applicatif -->
+        <article>
+            <h3>Ballon de football</h3>
+            <p>Ballon de football de qualité supérieure.</p>
+            <p>Prix : 25€/jour</p>
+            <button>Réserver</button>
+        </article>
+        <!-- ... -->
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2023 GearSwap. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
