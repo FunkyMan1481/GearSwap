@@ -11,7 +11,7 @@ class EquipmentsController < ApplicationController
     @equipment = Equipment.new(equipment_params)
 
     if @equipment.save
-      redirect_to equipments_path, notice: "L'équipement a été créé avec succès."
+      redirect_to equipments_path, notice: "L'équipement a été ajouté avec succès."
     else
       render :new
     end
