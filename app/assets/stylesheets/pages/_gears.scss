@@ -1,0 +1,43 @@
+.gear-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gear-card {
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.gear-card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.gear-card img {
+  width: 100%;
+  height: auto;
+}
+
+.gear-card h3 {
+  margin-top: 10px;
+}
+
+.gear-card p {
+  margin-top: 5px;
+}
+
+.reservation-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.reservation-button:hover {
+  background-color: #0056b3;
+}

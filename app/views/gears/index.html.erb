@@ -1,0 +1,12 @@
+<h1>Liste des équipements sportifs</h1>
+
+<div class="gear-cards">
+  <% @gears.each do |gear| %>
+    <div class="gear-card">
+      <img src="<%= gear.image_url %>" alt="<%= gear.name %>">
+      <h3><%= gear.name %></h3>
+      <p><%= gear.description %></p>
+      <a href="#" class="reservation-button">Réserver</a>
+    </div>
+  <% end %>
+</div>
