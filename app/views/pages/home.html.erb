@@ -7,37 +7,64 @@
     <!-- Barre de navigation -->
     <header>
         <nav>
-            <a href="/">Accueil</a>
-            <a href="/equipements">Équipements</a>
-            <a href="/reservations">Réservations</a>
-            <a href="/users/login">Se connecter</a>
-            <a href="/users/register">S'inscrire</a>
+
+          <ul class="navbar-nav me-auto">
+            <li class= nav-item> <a href="/">Accueil</a></li>
+            <li class= nav-item> <a href="/equipements">Équipements</a></li>
+                  <% if user_signed_in? %>
+                    <li class="nav-item active">
+                      <%= link_to "Home", "#", class: "nav-link" %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "Messages", "#", class: "nav-link" %>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%= image_tag "https://avatars.githubusercontent.com/u/100966173?v=4", class: "avatar", alt: "dropdown menu" %></a>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <%= link_to "Action", "#", class: "dropdown-item" %>
+                        <%= link_to "Another action", "#", class: "dropdown-item" %>
+                        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                      </div>
+                    </li>
+                  <% else %>
+                    <li class="nav-item">
+                      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                    </li>
+                  <% end %>
+          </ul>
+
         </nav>
     </header>
 
-    <!-- Section de recherche -->
     <section>
-        <h1>Location d'équipements sportifs</h1>
+
+        <form class="search-form" action="/rechercher" method="GET">
+  <input type="text" name="sport" placeholder="Rechercher un sport">
+  <input type="text" name="region" placeholder="Rechercher une région">
+
+  <div class="advanced-options">
+    <a href="#" class="toggle-button">Options avancées</a>
+
+    <div class="advanced-fields">
+      <select name="type">
+        <option value="">Tous les types</option>
+        <option value="exterieur">Extérieur</option>
+        <option value="interieur">Intérieur</option>
+      </select>
+      <input type="number" name="prix_max" placeholder="Prix maximum">
+    </div>
+  </div>
+
+  <button type="submit">Rechercher</button>
+</form>
+        <%# <h1>Location d'équipements sportifs</h1>
         <form action="/equipements/search" method="GET">
+
             <input type="text" name="query" placeholder="Rechercher un équipement">
             <button type="submit">Rechercher</button>
-        </form>
+        </form> %>
     </section>
-
-    <!-- Liste des équipements -->
-    <section>
-        <h2>Équipements disponibles</h2>
-        <!-- Remplacez ces éléments par une boucle dynamique dans votre serveur/applicatif -->
-        <article>
-            <h3>Ballon de football</h3>
-            <p>Ballon de football de qualité supérieure.</p>
-            <p>Prix : 25€/jour</p>
-            <button>Réserver</button>
-        </article>
-        <!-- ... -->
-    </section>
-
-    <!-- Pied de page -->
     <footer>
         <p>&copy; 2023 GearSwap. Tous droits réservés.</p>
     </footer>
