@@ -1,4 +1,5 @@
 Gear.destroy_all
+require 'faker'
 
 equipments_sportifs = [
   { name: "Ballon de football", description: "Ballon de football de taille standard" },
@@ -25,35 +26,6 @@ equipments_sportifs = [
 ]
 
 equipments_sportifs.each do |equipement|
-  # User.create(first_name: )
-  Gear.create(name: equipement[:name], description: equipement[:description])
+  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  user.gears.create(name: equipement[:name], description: equipement[:description])
 end
-
-# equipment_names = [
-#   'Ballon de football', 'Raquette de tennis', '', '',
-#   '', '', 'Poids pour haltères', 'Barre de traction',
-#   '', 'Bâton de hockey', 'Patin à glace', '',
-#   'Raquette de badminton', '', 'Gants de gardien de but', 'Maillot de cyclisme',
-#   '', '', 'Gilet de sauvetage', 'Corde à sauter',
-#   'Sac de frappe', 'Bande de résistance', '', '',
-#   'Balle de golf', '', 'Tee de golf', 'Crampons de football',
-#   'Protège-tibias', 'Casque de football', 'Masque de ski', 'Bâtons de ski',
-#   'Chaussures de randonnée', 'Boussole', 'Sac à dos de randonnée', '',
-#   '', '', 'Lampe de poche', 'Gourde',
-#   'Bâton de marche', 'Chaussures d’escalade', 'Harnais d’escalade', 'Corde d’escalade',
-#   'Mousqueton', 'Descendeur', 'Magnésie', 'Casque d’escalade',
-#   '', 'Roues de skateboard', 'Trucks de skateboard', 'Grip de skateboard',
-#   '', 'Maillot de bain', '', 'Bonnet de natation'
-# ]
-
-# # Création des équipements sportifs
-# equipment_names.each do |name|
-#   equipment = {
-#     name: name,
-#     category: 'Sport',
-#     description: "#{name} de qualité supérieure",
-#     available: [true, false].sample, # Disponibilité aléatoire
-#     price: rand(10.0..100.0).round(2) # Prix aléatoire
-#   }
-#   Equipement.create!(equipment)
-# end
