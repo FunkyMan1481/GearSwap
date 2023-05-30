@@ -1,36 +1,36 @@
-// /* Style pour le formulaire */
-// .form-group {
-//   margin-bottom: 20px;
-// }
+/* Style pour le formulaire */
+.form-group {
+  margin-bottom: 20px;
+}
 
-// label {
-//   display: block;
-//   font-weight: bold;
-// }
+label {
+  display: block;
+  font-weight: bold;
+}
 
-// input[type="text"],
-// input[type="email"],
-// input[type="password"] {
-//   width: 100%;
-//   padding: 10px;
-//   font-size: 16px;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-// }
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-// input[type="submit"] {
-//   padding: 10px 20px;
-//   font-size: 16px;
-//   background-color: #4CAF50;
-//   color: white;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-// }
+input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-// /* Style pour masquer le champ de coordonnées bancaires */
-// input[type="password"][autocomplete="off"] {
-//   -webkit-text-security: disc;
-//   -moz-text-security: disc;
-//   text-security: disc;
-// }
+/* Style pour masquer le champ de coordonnées bancaires */
+input[type="password"][autocomplete="off"] {
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+  input-security: disc;
+}
