@@ -1,54 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>GearSwap - Location d'équipements sportifs</title>
-     <link rel="stylesheet" href="/assets/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-          <ul class="navbar-nav me-auto d-flex flex-row align-items-center justify-content-between w-100">
-            <li class="nav-item"> <a href="/">Accueil</a></li>
-            <li class="nav-item"> <a href="/gears">Équipements</a></li>
-                  <% if user_signed_in? %>
-                    <li class="nav-item dropdown">
-                    <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <%= image_tag "https://avatars.githubusercontent.com/u/100966173?v=4", class: "avatar", alt: "dropdown menu" %></a>
-                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <%= link_to "Profile", profile_path, class: "dropdown-item" %>
-                        <%= link_to "Reservation", reservation_path, class: "dropdown-item" %>
-                        <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-                      </div>
-                    </li>
-                  <% else %>
-                    <li class="nav-item">
-                      <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
-                    </li>
-                  <% end %>
-          </ul>
-        </nav>
-    </header>
-        <section>
-          <div class='container mt-5'>
-            <form class="search-form" action="/rechercher"  method="GET">
-              <div class="input-group">
-                <input type="text" name="sport" placeholder="Rechercher un sport">
-                <input type="text" name="region" placeholder="Rechercher une région">
-              </div>
-              <div class="input-group">
-                <select name="type">
-                  <option value="">Tous les types</option>
-                  <option value="exterieur">Extérieur</option>
-                  <option value="interieur">Intérieur</option>
-                </select>
-                <input type="number" name="prix_max" placeholder="Prix maximum">
-              </div>
-              <button type="submit">Rechercher</button>
-            </form>
-          </div>
-        </section>
-    <footer>
-        <p>&copy; 2023 GearSwap. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+
+<div class='container mt-5'>
+  <form class="search-form" action="/rechercher"  method="GET">
+    <div class="input-group">
+      <input type="text" name="sport" placeholder="Rechercher un sport">
+      <input type="text" name="region" placeholder="Rechercher une région">
+    </div>
+    <div class="input-group">
+      <select name="type">
+        <option value="">Tous les types</option>
+        <option value="exterieur">Extérieur</option>
+        <option value="interieur">Intérieur</option>
+      </select>
+      <input type="number" name="prix_max" placeholder="Prix maximum">
+    </div>
+    <button type="submit">Rechercher</button>
+  </form>
+</div>
