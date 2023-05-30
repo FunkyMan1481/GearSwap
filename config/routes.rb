@@ -5,9 +5,8 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'pages#profile'
   patch 'profile', to: 'pages#profile'
-  get '/reservations', to: 'reservations#index'
-  patch 'reservation', to: 'reservation#index'
+  get 'reservation', to: 'pages#reservation'
+  # patch 'reservation', to: 'pages#reservation'
 
   resources :gears, only: %i[index new create]
-
 end
