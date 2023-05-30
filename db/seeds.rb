@@ -1,5 +1,7 @@
-Gear.destroy_all
 require 'faker'
+
+Gear.destroy_all
+User.destroy_all
 
 equipments_sportifs = [
   { name: "Ballon de football", description: "Ballon de football de taille standard" },
@@ -26,6 +28,6 @@ equipments_sportifs = [
 ]
 
 equipments_sportifs.each do |equipement|
-  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  user.gears.create(name: equipement[:name], description: equipement[:description])
+  user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+  user.gears.create!(name: equipement[:name], description: equipement[:description])
 end
