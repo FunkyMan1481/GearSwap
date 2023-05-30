@@ -1,0 +1,12 @@
+<h1>Mes réservations</h1>
+
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li>
+      <strong>Date de début:</strong> <%= reservation.start_date %><br>
+      <strong>Date de fin:</strong> <%= reservation.end_date %><br>
+      <strong>Équipement:</strong> <%= reservation.equipment.name %><br>
+      <strong>Utilisateur:</strong> <%= reservation.user.name %><br>
+    </li>
+  <% end %>
+</ul>
