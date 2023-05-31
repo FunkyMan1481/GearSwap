@@ -19,6 +19,7 @@ class GearsController < ApplicationController
 
   def show
     @gear = Gear.find(params[:id])
+    @reservation = Reservation.new
   end
 
   private
