@@ -1,12 +1,11 @@
 <h1>Mes réservations</h1>
 
-<ul>
-  <% @reservations.each do |reservation| %>
-    <li>
-      <strong>Date de début:</strong> <%= reservation.start_date %><br>
-      <strong>Date de fin:</strong> <%= reservation.end_date %><br>
-      <strong>Équipement:</strong> <%= reservation.equipment.name %><br>
-      <strong>Utilisateur:</strong> <%= reservation.user.name %><br>
-    </li>
-  <% end %>
-</ul>
+<% @reservations.each do |reservation| %>
+  <div class="reservation">
+    <img src="<%= reservation.gear.image_url %>" alt="Image de l'équipement">
+    <p>Coût de la location : <%= reservation.cout %> €</p>
+    <p>Date de début : <%= reservation.date_debut %></p>
+    <p>Date de fin : <%= reservation.date_fin %></p>
+  </div>
+<% end %>
+
