@@ -1,0 +1,27 @@
+<div class="container mt-5">
+
+
+<h1>Détails de l'équipement</h1>
+
+<img src="<%= @gear.image_url %>" alt="Image de l'équipement">
+<p>Description : <%= @gear.description %></p>
+<p>Prix à la journée : <%= @gear.description %> €</p>
+
+<%= form_tag create_reservation_path, method: :post do %>
+  <div class="field">
+    <%= label_tag :date_debut, "Date de début" %>
+    <%= text_field_tag :date_debut, nil, class: "datepicker" %>
+  </div>
+  <div class="field">
+    <%= label_tag :date_fin, "Date de fin" %>
+    <%= text_field_tag :date_fin, nil, class: "datepicker" %>
+  </div>
+  <%= hidden_field_tag :gear_id, @gear.id %>
+  <%= submit_tag "Réserver" %>
+<% end %>
+
+<%# <h2>Coordonnées du propriétaire</h2> %>
+<%# <p>Téléphone : <%= @gear.proprietaire.telephone</p> %>
+<%# <p>Email : <%= @gear.proprietaire.email %>
+
+</div>
