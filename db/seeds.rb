@@ -4,13 +4,13 @@ Gear.destroy_all
 User.destroy_all
 
 equipments_sportifs = [
+  { name: "Finger Skate", description: "Pour faire du skate en toute sécurité", image_url: "https://skateandannoy.com/wp-content/uploads/2009/07/fingerpants4.jpg" },
   { name: "Ballon de football", description: "Ballon de football de taille standard", image_url: "https://www.clickforfoot.com/10998/ballon-officiel-ligue-1-football-match-t5.jpg" },
   { name: "Raquette de tennis", description: "Raquette avec cordage intact, manche en bon état et sans dommages structurels.", image_url: "https://www.cdiscount.com/pdt2/8/3/8/1/700x700/wil1828282721838/rw/wilson-raquette-de-tennis-unisexe-pour-les-joueur.jpg" },
   { name: "Casque de vélo", description: "Casque de protection spécialement conçu pour les cyclistes. Il offre une protection contre les chocs en cas de chute ou d'accident, tout en étant confortable à porter.", image_url: "https://www.cdiscount.com/pdt2/8/4/2/1/350x350/MP50994842/rw/casque-de-velo-casques-de-cyclisme-de-velo-moules.jpg"},
   { name: "Chaussures de course", description: "Elles offrent un bon amorti, un soutien adéquat et une bonne adhérence pour permettre aux coureurs de performer de manière optimale.", image_url: "https://media1.alltricks.fr/ckfinder/images/chaussure-running-21072016(1).jpg" },
   { name: "Tapis de yoga", description: "Il offre une surface antidérapante et un bon amorti pour assurer confort et stabilité pendant les exercices.", image_url: "https://clicknco.fr/wp-content/uploads/2020/12/CORK-ACCESS_1.2.jpg" },
   { name: "Combinaison de plongée", description: "Tenue utilisée pour rester au chaud dans l'eau. Fabriquée à partir de néoprène", image_url: "https://www.arimair.fr/images/Image/AQUALUNG-HYDROFLEX-3mm-combinaison-de-plongee-femme-SU77.jpg" },
-  { name: "Finger Skate", description: "Pour faire du skate en toute sécurité", image_url: "https://skateandannoy.com/wp-content/uploads/2009/07/fingerpants4.jpg" },
   { name: "Ballon de rugby", description: "résistant et adapté aux conditions de jeu ", image_url: "https://www.enmoderugby.com/21431-medium_default/ballon-rugby-match-xv-france-gilbert.jpg" },
   { name: "Planche à voile", description: "offrant une expérience de glisse unique.", image_url: "https://windsurf.voyages-adekua.fr/sites/default/files/windsurf/produit/sejour-windsurf-a-piantarella-corse-avec-villa-7-personnes-location-materiel/images/vacances-windsurf-corse-trip-adekua-10.jpg" },
   { name: "Gants de boxe", description: "Ils offrent un bon rembourrage et un soutien pour minimiser les risques de blessures", image_url: "https://euro.venum.com/media/catalog/product/cache/3d6373dfdbd8bf7042581a31874a0831/a/3/a3ef68a9d3ba7eaae456820230d7c512dc7b5861_BG_CONTENDER_KID_BLACK_RED_HD_01.jpg" },
