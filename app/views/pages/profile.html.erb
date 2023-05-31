@@ -10,23 +10,21 @@
     <p>Numéro de téléphone : <%= @user.telephone %></p>
   <% end %>
 
-</div>
+  <h1>Mes réservations</h1>
 
-
-<h1>Mes réservations</h1>
-
-<% if @reservations.nil? %>
-  <p>Vous n'avez aucune réservation pour le moment.</p>
-<% else %>
-  <% @reservations.each do |reservation| %>
-    <div class="reservation">
-      <div class="image">
-        <%= image_tag reservation.gear.image_url %>
+  <% if @reservations.nil? %>
+    <p>Vous n'avez aucune réservation pour le moment.</p>
+  <% else %>
+    <% @reservations.each do |reservation| %>
+      <div class="reservation">
+        <div class="image">
+          <%= image_tag reservation.gear.image_url %>
+        </div>
+        <div class="details">
+          <p><strong>Coût de la location:</strong> <%#= #reservation.cout_location %> €</p>
+          <p><strong>Dates de location:</strong> <%= reservation.date_de_debut.strftime('%d/%m/%Y') %> - <%= reservation.date_de_fin.strftime('%d/%m/%Y') %></p>
+        </div>
       </div>
-      <div class="details">
-        <p><strong>Coût de la location:</strong> <%#= #reservation.cout_location %> €</p>
-        <p><strong>Dates de location:</strong> <%= reservation.date_de_debut.strftime('%d/%m/%Y') %> - <%= reservation.date_de_fin.strftime('%d/%m/%Y') %></p>
-      </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
