@@ -9,9 +9,10 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-
+    @reservation.user = current_user
+    @reservation.gear = Gear.find(params[:gear_id])
     if @reservation.save
-      redirect_to reservations_path, notice: "La réservation a été créée avec succès."
+      redirect_to profile_path, notice: "La réservation a été créée avec succès."
     else
       render :new
     end
@@ -20,6 +21,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:equipment_id, :user_id, :start_date, :end_date)
+    params.require(:reservation).permit(:date_de_debut, :date_de_fin)
   end
 end
