@@ -1,0 +1,16 @@
+<%= simple_form_for(@gear) do |g| %>
+  <%= g.error_notification %>
+  <%= g.error_notification message: g.object.errors[:base].to_sentence if g.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= g.input :name %>
+    <%= g.input :address,
+      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+    %>
+  </div>
+
+  <div class="form-actions">
+    <%= g.button :submit %>
+  </div>
+<% end %>
