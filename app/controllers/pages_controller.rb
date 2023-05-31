@@ -15,5 +15,6 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @reservations = current_user.reservations
   end
 end
