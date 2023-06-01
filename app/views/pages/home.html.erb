@@ -1,34 +1,20 @@
-<div class='container mt-5'>
-  <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
+<div class="container">
+  <div class='container mt-5'>
+    <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Trouver un équipement..."
+      %>
+      <%= text_field_tag :localisation,
+      params[:localisation],
       class: "form-control",
-      placeholder: "Trouver un équipement..."
-    %>
-     <%= text_field_tag :localisation,
-    params[:localisation],
-    class: "form-control",
-    placeholder: "Saisir une localisation..."
-    %>
-    <div class="offset-button">
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-</div>
-<div class='container mt-5'>
-  <form class="search-form" action="/rechercher"  method="GET">
-    <div class="input-group">
-      <input type="text" name="sport" placeholder="Rechercher un sport">
-      <input type="text" name="region" placeholder="Rechercher une région">
-    </div>
-    <div class="input-group">
-      <select name="type">
-        <option value="">Tous les types</option>
-        <option value="exterieur">Extérieur</option>
-        <option value="interieur">Intérieur</option>
-      </select>
-      <%# <input type="number" name="prix_max" placeholder="Prix maximum"> %>
-    </div>
-    <button type="submit">Rechercher</button>
-  </form>
+      placeholder: "Saisir une localisation..."
+      %>
+      <div class="offset-button">
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
 </div>

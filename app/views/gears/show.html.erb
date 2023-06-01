@@ -5,7 +5,7 @@
 
 <img src="<%= @gear.image_url %>" alt="Image de l'équipement">
 <p>Description : <%= @gear.description %></p>
-<p>Prix à la journée : <%= @gear.description %> €</p>
+<p>Prix à la journée : <%= @gear.price %> €</p>
 
 <%= simple_form_for [@gear, @reservation] do |f| %>
   <div class="field">

@@ -1,6 +1,7 @@
 /* Style pour le formulaire */
 .form-group {
   margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
@@ -33,4 +34,10 @@ input[type="password"][autocomplete="off"] {
   -webkit-text-security: disc;
   -moz-text-security: disc;
   input-security: disc;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
 }

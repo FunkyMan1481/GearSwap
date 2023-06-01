@@ -3,6 +3,12 @@ require 'faker'
 Gear.destroy_all
 User.destroy_all
 
+User.create!(
+  email: "adam@gmail.com",
+  password: "123456",
+  first_name: "Adam",
+  last_name: "Ollivier"
+)
 equipments_sportifs = [
   { name: "Ballon de football", description: "Ballon de football de taille standard", address: "95 rue des maraîchers, 75020 Paris", image_url: "https://www.clickforfoot.com/10998/ballon-officiel-ligue-1-football-match-t5.jpg" },
   { name: "Palmes", description: "Des palmes solides, faites pour la plongée", address: "45 Quai Adolphe Landry, 20260 Calvi", image_url: "https://globalneoprene.com/3253-home_default/palmes-plongee-reglables-cressi-thor-ebs-jaune.jpg" },
@@ -35,5 +41,5 @@ equipments_sportifs = [
 
 equipments_sportifs.each do |equipement|
   user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  user.gears.create!(name: equipement[:name], description: equipement[:description], address: equipement[:address], image_url: equipement[:image_url])
+  user.gears.create!(name: equipement[:name], description: equipement[:description], address: equipement[:address], image_url: equipement[:image_url], price: (10..100).to_a.sample)
 end

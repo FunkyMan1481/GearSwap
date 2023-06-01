@@ -106,3 +106,23 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.container.map-container {
+  margin-bottom: 80px; /* Ajustez la valeur en fonction de la hauteur du footer */
+}
+
+.main-container {
+  min-height: calc(100vh - 62px - 112px);
+}
