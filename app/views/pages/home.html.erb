@@ -1,4 +1,14 @@
 <div class='container mt-5'>
+  <%= form_with url: gears_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Trouver un équipement..."
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<div class='container mt-5'>
   <form class="search-form" action="/rechercher"  method="GET">
     <div class="input-group">
       <input type="text" name="sport" placeholder="Rechercher un sport">
