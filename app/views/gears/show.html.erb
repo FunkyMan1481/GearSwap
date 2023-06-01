@@ -3,7 +3,7 @@
 
 <h1>Détails de l'équipement</h1>
 
-<img src="<%= @gear.image_url %>" alt="Image de l'équipement">
+<%= cl_image_tag @gear.photo.key %>
 <p>Description : <%= @gear.description %></p>
 <p>Prix à la journée : <%= @gear.price %> €</p>
 
