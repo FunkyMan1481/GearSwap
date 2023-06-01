@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get 'profile', to: 'pages#profile'
+  get '/gears', to: 'gears#index'
 
   resources :gears, only: %i[index new create show] do
     resources :reservations, only: %i[new create]

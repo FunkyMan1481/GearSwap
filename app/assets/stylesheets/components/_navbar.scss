@@ -1,3 +1,18 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 50px 20px 20px 50px;
+  z-index: 1000;
+}
+
+// .container {
+//   margin-top: 10%;
+// }
+
 .navbar-lewagon {
   justify-content: space-between;
   // background: black;

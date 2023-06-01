@@ -1,22 +1,10 @@
-<div class="container mt-5">
-
-  <h1>Profil de l'utilisateur</h1>
-
-  <p>Nom : <%= @user.last_name %></p>
-  <p>Prénom : <%= @user.first_name %></p>
-  <p>Email : <%= @user.email %></p>
-  <% if @user.telephone %>
-
-    <p>Numéro de téléphone : <%= @user.telephone %></p>
-  <% end %>
-
-  <h1>Mes réservations</h1>
-
-  <% if @reservations.nil? %>
-    <p>Vous n'avez aucune réservation pour le moment.</p>
-  <% else %>
-    <% @reservations.each do |reservation| %>
-      <div class="reservation">
+<h1>Mes réservations</h1>
+  <div class="gear-cards">
+    <% if @reservations.nil? %>
+      <p>Vous n'avez aucune réservation pour le moment.</p>
+    <% else %>
+      <% @reservations.each do |reservation| %>
+      <div class="gear_card">
         <div class="image">
           <%= image_tag reservation.gear.image_url %>
         </div>
@@ -26,5 +14,6 @@
         </div>
       </div>
     <% end %>
+  </div>
   <% end %>
 </div>
