@@ -1,24 +1,30 @@
-<div class="container mt-5">
-
-
-<h1>Détails de l'équipement</h1>
-
-<img src="<%= @gear.image_url %>" alt="Image de l'équipement">
-<p>Description : <%= @gear.description %></p>
-<p>Prix à la journée : <%= @gear.price %> €</p>
-
-<%= simple_form_for [@gear, @reservation] do |f| %>
-  <div class="field">
-    <%= f.input :date_de_debut, class: "datepicker" %>
+<div class="container mt-navbar">
+  <h1>Détails de l'équipement</h1>
+  <div class="cards">
+    <div class="card-product">
+      <img src="<%= @gear.image_url %>" alt="Image de l'équipement">
+      <p><strong>Description :</strong> <%= @gear.description %></p>
+      <p><strong>Prix à la journée :</strong> <%= @gear.price %> €</p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.input :date_de_fin, class: "datepicker" %>
+  <div class="container">
+    <%= simple_form_for [@gear, @reservation] do |f| %>
+      <div class="field">
+        <%= f.input :date_de_debut,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      </div>
+      <div class="field">
+        <%= f.input :date_de_fin,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      </div>
+      <%= submit_tag "Réserver" %>
+    <% end %>
   </div>
-  <%= submit_tag "Réserver" %>
-<% end %>
+</div>
+
 
 <%# <h2>Coordonnées du propriétaire</h2> %>
 <%# <p>Téléphone : <%= @gear.proprietaire.telephone</p> %>
 <%# <p>Email : <%= @gear.proprietaire.email %>
-
-</div>
