@@ -7,7 +7,7 @@
 <% end %>
 
 <% @reservations.each do |reservation| %>
-  <div class="reservation">
+  <div class="card-product">
     <img src="<%= reservation.gear.image_url %>" alt="Image de l'équipement">
     <p>Coût de la location : <%= reservation.cout %> €</p>
     <p>Date de début : <%= reservation.date_debut %></p>
