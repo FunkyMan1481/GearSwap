@@ -1,4 +1,5 @@
 require 'faker'
+require "open-uri"
 
 Gear.destroy_all
 User.destroy_all
@@ -41,5 +42,7 @@ equipments_sportifs = [
 
 equipments_sportifs.each do |equipement|
   user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  user.gears.create!(name: equipement[:name], description: equipement[:description], address: equipement[:address], image_url: equipement[:image_url], price: (10..100).to_a.sample)
+  gear = user.gears.create!(name: equipement[:name], description: equipement[:description], address: equipement[:address], price: (10..100).to_a.sample)
+  file = URI.open(equipement[:image_url])
+  gear.photo.attach(io: file, filename: "#{equipement[:name]}.jpg", content_type: "image/jpg")
 end

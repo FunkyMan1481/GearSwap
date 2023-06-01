@@ -12,7 +12,7 @@
     <% else %>
       <% @reservations.each do |reservation| %>
         <div class="card-product">
-          <%= image_tag reservation.gear.image_url %>
+          <%= image_tag reservation.gear.photo %>
           <div class="card-product-infos">
             <p><strong>Coût de la location:</strong> <%= reservation.cout_location %> €</p>
             <p><strong>Dates de location:</strong> <%= reservation.date_de_debut.strftime('%d/%m/%Y') %> - <%= reservation.date_de_fin.strftime('%d/%m/%Y') %></p>
