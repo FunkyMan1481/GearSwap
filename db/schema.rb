@@ -24,8 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_01_132324) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.string "localisation"
     t.string "avatar"
+    t.string "localisation"
     t.float "price"
     t.index ["user_id"], name: "index_gears_on_user_id"
   end
