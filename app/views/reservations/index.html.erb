@@ -6,7 +6,6 @@
   <%= link_to "Réserver", "#", class: "btn btn-primary", onclick: "showLoginAlert()" %>
 <% end %>
 
-
 <% @reservations.each do |reservation| %>
   <div class="reservation">
     <img src="<%= reservation.gear.image_url %>" alt="Image de l'équipement">

@@ -9,6 +9,12 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to gears_path, notice: 'La réservation a été supprimée avec succès.'
+  end
+
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
