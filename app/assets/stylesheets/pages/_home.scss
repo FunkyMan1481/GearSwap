@@ -122,3 +122,7 @@ footer {
 .container.map-container {
   margin-bottom: 80px; /* Ajustez la valeur en fonction de la hauteur du footer */
 }
+
+.main-container {
+  min-height: calc(100vh - 62px - 112px);
+}

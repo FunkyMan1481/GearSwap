@@ -35,3 +35,9 @@ input[type="password"][autocomplete="off"] {
   -moz-text-security: disc;
   input-security: disc;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
