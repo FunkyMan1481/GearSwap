@@ -16,6 +16,7 @@
           <div class="card-product-infos">
             <p><strong>Coût de la location:</strong> <%= reservation.cout_location %> €</p>
             <p><strong>Dates de location:</strong> <%= reservation.date_de_debut.strftime('%d/%m/%Y') %> - <%= reservation.date_de_fin.strftime('%d/%m/%Y') %></p>
+            <%= button_to "Supprimer", reservation_path(reservation), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette réservation ?" }, class: "btn btn-danger" %>
           </div>
         </div>
       <% end %>
