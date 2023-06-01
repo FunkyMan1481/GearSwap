@@ -1,10 +1,18 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+
   def index
     @reservations = Reservation.all
   end
 
   def new
     @reservation = Reservation.new
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to gears_path, notice: 'La réservation a été supprimée avec succès.'
   end
 
   def create
