@@ -1,5 +1,11 @@
 <h1>Mes réservations</h1>
 
+<% if user_signed_in? %>
+  <%= link_to "Réserver", new_reservation_path, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to "Réserver", "#", class: "btn btn-primary", onclick: "showLoginAlert()" %>
+<% end %>
+
 <% @reservations.each do |reservation| %>
   <div class="reservation">
     <img src="<%= reservation.gear.image_url %>" alt="Image de l'équipement">
@@ -8,4 +14,3 @@
     <p>Date de fin : <%= reservation.date_fin %></p>
   </div>
 <% end %>
-

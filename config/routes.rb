@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   get '/gears', to: 'gears#index'
 
+
   resources :gears, only: %i[index new create show] do
     resources :reservations, only: %i[new create]
   end
+  resources :reservations, only: [:destroy]
 end
