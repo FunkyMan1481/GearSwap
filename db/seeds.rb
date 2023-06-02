@@ -42,7 +42,7 @@ equipments_sportifs = [
 
 equipments_sportifs.each do |equipement|
   user = User.create!(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  gear = user.gears.create!(name: equipement[:name], description: equipement[:description], address: equipement[:address], price: (10..100).to_a.sample)
+  gear = user.gears.create!(name: equipement[:name], description: equipement[:description], address: equipement[:address], price: (10..30).to_a.sample)
   file = URI.open(equipement[:image_url])
   gear.photo.attach(io: file, filename: "#{equipement[:name]}.jpg", content_type: "image/jpg")
 end
