@@ -93,13 +93,13 @@ h6 {
 }
 
 .button {
-  background-color: #2a7f62;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+ color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .button:hover {
@@ -143,7 +143,6 @@ article {
 .main-container {
   min-height: calc(100vh - 62px - 112px);
 }
-
 
 #logo-title {
   color: white;
