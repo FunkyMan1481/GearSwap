@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
   // background-image: url(explosion_de_couleurs__fde18304-dd93-4e55-aeb0-7a4b65521fdc);
-  color: #333;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -76,13 +76,13 @@ nav a {
 }
 
 .button {
-  background-color: #2a7f62;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+ color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .button:hover {
