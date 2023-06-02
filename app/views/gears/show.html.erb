@@ -2,21 +2,21 @@
   <h1>Détails de l'équipement</h1>
   <div class="cards">
     <div class="card-product">
-      <img src="<%= @gear.image_url %>" alt="Image de l'équipement">
+      <%= cl_image_tag @gear.photo.key %>
       <p><strong>Description :</strong> <%= @gear.description %></p>
       <p><strong>Prix à la journée :</strong> <%= @gear.price %> €</p>
     </div>
 
   </div>
   <div class="container">
-    <%= simple_form_for [@gear, @reservation] do |f| %>
+    <%= simple_form_for [@gear, @reservation], data: { controller: "datepicker", datepicker_disable_value: @disable_dates.to_json } do |f| %>
       <div class="d-flex">
         <%= f.input :date_de_debut,
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+            input_html: { data: { datepicker_target: "start" } } %>
         <%= f.input :date_de_fin,
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+            input_html: { data: { datepicker_target: "end" } } %>
       </div>
       <%= submit_tag "Réserver" %>
     <% end %>
