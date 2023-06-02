@@ -42,8 +42,24 @@ nav a {
   color: #fff;
 }
 
+h6 {
+  color: whitesmoke;
+}
+
+.banner {
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  background-image: url("homeBack.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .container {
   margin-top: 5rem;
+  padding: 20px;
+  background-color: rgba(255,255,255, 0.25);
+  border-radius: 20px;
 }
 
 .search-form {
@@ -97,27 +113,27 @@ article {
   margin-bottom: 20px;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+// footer {
+//   background-color: #333;
+//   color: #fff;
+//   text-align: center;
+//   padding: 10px 0;
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+// }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
+// footer {
+//   background-color: #333;
+//   color: #fff;
+//   text-align: center;
+//   padding: 20px 0;
+//   position: fixed;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 1;
+// }
 
 .container.map-container {
   margin-bottom: 80px; /* Ajustez la valeur en fonction de la hauteur du footer */
@@ -125,4 +141,11 @@ footer {
 
 .main-container {
   min-height: calc(100vh - 62px - 112px);
+}
+
+#logo-title {
+  color: white;
+  font-weight: bolder;
+  font-size: 42px;
+  margin: 0;
 }
