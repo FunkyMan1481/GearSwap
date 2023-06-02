@@ -43,6 +43,12 @@ class GearsController < ApplicationController
   def show
     @gear = Gear.find(params[:id])
     @reservation = Reservation.new
+    @disable_dates = @gear.reservations.map do |reservation|
+      {
+        from: reservation.date_de_debut,
+        to: reservation.date_de_fin
+      }
+    end
   end
 
   private
