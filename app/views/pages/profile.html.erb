@@ -1,25 +1,27 @@
-<div class="container mt-navbar">
-  <h1>Profil de l'utilisateur</h1>
-  <p>Nom : <%= @user.last_name %></p>
-  <p>Prénom : <%= @user.first_name %></p>
-  <p>Email : <%= @user.email %></p>
-</div>
-<div class="container mt-5">
-  <h1>Mes réservations</h1>
-  <div class="cards">
-    <% if @reservations.nil? %>
-      <p>Vous n'avez aucune réservation pour le moment.</p>
-    <% else %>
-      <% @reservations.each do |reservation| %>
-        <div class="card-product">
-          <%= image_tag reservation.gear.photo %>
-          <div class="card-product-infos">
-            <p><strong>Coût de la location:</strong> <%= reservation.cout_location %> €</p>
-            <p><strong>Dates de location:</strong> <%= reservation.date_de_debut.strftime('%d/%m/%Y') %> - <%= reservation.date_de_fin.strftime('%d/%m/%Y') %></p>
-            <%= button_to "Supprimer", reservation_path(reservation), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette réservation ?" }, class: "btn btn-danger" %>
+<div class="banner3">
+  <div class="container mt-navbar">
+    <h1>Profil de l'utilisateur</h1>
+    <p>Nom : <%= @user.last_name %></p>
+    <p>Prénom : <%= @user.first_name %></p>
+    <p>Email : <%= @user.email %></p>
+  </div>
+  <div class="container mt-5">
+    <h1>Mes réservations</h1>
+    <div class="cards">
+      <% if @reservations.nil? %>
+        <p>Vous n'avez aucune réservation pour le moment.</p>
+      <% else %>
+        <% @reservations.each do |reservation| %>
+          <div class="card-product">
+            <%= image_tag reservation.gear.photo %>
+            <div class="card-product-infos text-black">
+              <p><strong>Coût de la location:</strong> <%= reservation.cout_location %> €</p>
+              <p><strong>Dates de location:</strong> <%= reservation.date_de_debut.strftime('%d/%m/%Y') %> - <%= reservation.date_de_fin.strftime('%d/%m/%Y') %></p>
+              <%= button_to "Supprimer", reservation_path(reservation), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette réservation ?" }, class: "btn btn-danger" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

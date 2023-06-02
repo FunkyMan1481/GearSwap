@@ -1,10 +1,12 @@
 <div class="container mt-navbar">
-  <h1>Détails de l'équipement</h1>
+  <h1><%= @gear.name %></h1>
+  <h4>loué par <%= @gear.user.first_name %></h4>
+  <p><%= @gear.address %></p>
   <div class="cards">
-    <div class="card-product">
+    <div class="card-product text-black position-relative">
       <%= cl_image_tag @gear.photo.key %>
-      <p><strong>Description :</strong> <%= @gear.description %></p>
-      <p><strong>Prix à la journée :</strong> <%= @gear.price %> €</p>
+      <p class="ps-2"><%= @gear.description %></p>
+      <p class="position-absolute quezac"><%= @gear.price %> €</p>
     </div>
 
   </div>
